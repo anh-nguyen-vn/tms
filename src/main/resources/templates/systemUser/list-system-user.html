@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:fragment="content-js">
+        <script th:inline="javascript">
+            $(document).ready(function() {
+                $('.data_table').dataTable({
+                    "sDom": 'fCl<"clear">rtip',
+                    "sPaginationType": "full_numbers" ,
+                    "aaSorting": [],
+                    "aLengthMenu":[100,150,200],
+                    "aoColumns": [
+                        { "bSortable": false },null,null,null,{ "bSortable": false },null,null
+                    ]
+                });
+            });
+        </script>
+    </div>
+</head>
+<body>
+<div th:fragment="content" class="main-content">
+    <form th:action="@{/list-system-user}" id="form-search-system-user" method="post">
+        <div id="content">
+            <div class="inner">
+                <div class="topcolumn">
+                    <div class="logo"></div>
+                </div>
+                <div class="clear"></div>
+                <div class="widget">
+                    <div class="header">
+                        <span><span class="ico gray window"></span> Tìm Kiếm Người Dùng </span>
+                    </div>
+                    <div class="content" th:object="${searchCriteria}">
+                    <!-- title box -->
+                        <div class="widgets">
+                            <div class="oneTwo">
+                                <div class="section">
+                                    <label> Username </label>
+                                    <div>
+                                        <input type="text" cssClass="full" name="username"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oneTwo">
+                                <div class="section">
+                                    <label> Email </label>
+                                    <div>
+                                        <input type="text" cssClass="full" name="email"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="widgets">
+                            <div class="oneTwo">
+                                <div class="section">
+                                    <label> First Name </label>
+                                    <div>
+                                        <input type="text" cssClass="full" name="firstName"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oneTwo">
+                                <div class="section">
+                                    <label> Last Name </label>
+                                    <div>
+                                        <input type="text" cssClass="full" name="lastName"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="widgets">
+                            <div class="oneTwo">
+                                <div class="section">
+                                    <label> User Role </label>
+                                    <div>
+                                        <select class="normal" name="roleId">
+                                            <option value="-1"  >Please Select</option>
+                                            <option th:each="userRole : ${userRoleList}" th:value="${userRole.id}" th:text="${userRole.name}"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="section last">
+                        <div><a class="uibutton loading" title="Saving" rel="1" onclick="submitForm('form-system-user')" >submit</a> <a class="uibutton special"  >clear form</a> </div>
+                    </div>
+                </div>
+                <div class="widget">
+                    <div class="header"><span ><span class="ico  gray random"></span> Danh Sách Người Dùng </span></div>
+                    <div class="content">
+                        <div class="tableName">
+                            <table class="dataTable" >
+                                <thead>
+                                    <tr>
+                                        <th><div class="th_wrapp">No.</div></th>
+                                        <th><div class="th_wrapp">Username</div></th>
+                                        <th><div class="th_wrapp">Email</div></th>
+                                        <th><div class="th_wrapp">First Name</div></th>
+                                        <th><div class="th_wrapp">First Name</div></th>
+                                        <th><div class="th_wrapp">User Role</div></th>
+                                        <th><div class="th_wrapp">Status</div></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX" th:each="systemUser : ${systemUserList}">
+                                        <td ></td>
+                                        <td th:text="${systemUser.username}"></td>
+                                        <td th:text="${systemUser.email}"></td>
+                                        <td th:text="${systemUser.firstName}"></td>
+                                        <td th:text="${systemUser.lastName}"></td>
+                                        <td th:text="${systemUser.roleId}"></td>
+                                        <td th:text="${systemUser.isDeleted}"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div><!-- End content -->
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+

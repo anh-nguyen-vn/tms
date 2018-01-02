@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8" />
+    <title>Index Page</title>
+</head>
+<body>
+<div th:fragment="content">
+    Logged user: <span sec:authentication="name"></span> <br/>
+    User Role: <span sec:authentication="principal.authorities"></span>
+
+    <span><a href="/tms/init-system-user">Create System User</a> </span>
+</div>
+
+</body>
+</html>
