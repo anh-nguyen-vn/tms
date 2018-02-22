@@ -34,10 +34,10 @@ public class ThymeleafLayoutInterceptor extends HandlerInterceptorAdapter {
         }
         String originalViewName = modelAndView.getViewName();
         LOGGER.info("original View Name [{}]", originalViewName);
-        if (isRedirectOrForward(originalViewName)) {
+        if (this.isRedirectOrForward(originalViewName)) {
             return;
         }
-        String layoutName = getLayoutName(handler);
+        String layoutName = this.getLayoutName(handler);
         modelAndView.setViewName(layoutName);
         modelAndView.addObject(this.viewAttributeName, originalViewName);
     }
@@ -49,7 +49,7 @@ public class ThymeleafLayoutInterceptor extends HandlerInterceptorAdapter {
     private String getLayoutName(Object handler) {
         if (handler instanceof HandlerMethod) {
             HandlerMethod handlerMethod = (HandlerMethod) handler;
-            Layout layout = getMethodOrTypeAnnotation(handlerMethod);
+            Layout layout = this.getMethodOrTypeAnnotation(handlerMethod);
             if (layout != null) {
                 LOGGER.info("view name [{}]", layout.value());
                 return layout.value();

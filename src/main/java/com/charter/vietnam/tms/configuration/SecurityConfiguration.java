@@ -47,9 +47,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    public void configure(WebSecurity web) throws Exception {
-        web
-                .ignoring()
-                .antMatchers("/tms/components/**", "/tms/js/**", "/tms/images/**");
+    public void configure(WebSecurity web) {
+        web.ignoring()
+                .antMatchers("/tms/**/components/**", "/tms/**/js/**", "/tms/**/images/**", "/tms/**/css/**");
     }
 }

@@ -11,7 +11,6 @@ import com.charter.vietnam.tms.repository.entity.UserRoleEntity;
 import com.charter.vietnam.tms.service.SystemUserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -20,11 +19,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
+@RequestMapping(value = "/system-user")
 public class SystemUserController {
 
     private static final Logger LOGGER = LogManager.getLogger();
@@ -32,18 +31,17 @@ public class SystemUserController {
     @Autowired
     private SystemUserService systemUserService;
 
-    @RequestMapping(value = "/list-system-user")
+    @RequestMapping(value = "/search")
     @Layout("layout/default")
-    public ModelAndView searchSystemUser(@ModelAttribute("searchCriteria")SystemUserSearchCondition searchCondition,
+    public ModelAndView searchSystemUser(@ModelAttribute("searchCondition")SystemUserSearchCondition searchCondition,
                                          @ModelAttribute("pagination")Pagination pagination) {
-        BaseModelAndView modelAndView = new BaseModelAndView();
+        BaseModelAndView modelAndView = new BaseModelAndView("systemUser/list-system-user");
 
         // search system user by condition
         Page<SystemUserEntity> systemUserEntityList = systemUserService.searchSystemUserByCondition(searchCondition, pagination);
         List<SystemUserModel> systemUserModelList = systemUserEntityList.getContent().stream()
                 .map(this::convertToSystemUserModel)
                 .collect(Collectors.toList());
-        modelAndView.setViewName("systemUser/list-system-user");
         modelAndView.addObject("systemUserList", systemUserModelList);
         modelAndView.setPagination(pagination);
 

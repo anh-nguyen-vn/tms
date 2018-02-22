@@ -2,104 +2,87 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <div th:fragment="header-js">
-        <script type="text/javascript" th:src="@{js/jquery.min.js}"></script>
-        <script type="text/javascript" th:src="@{js/jquery.cookie.js}"></script>
-        <script type="text/javascript" th:src="@{js/zice.custom.js}"></script>
-        <script type="text/javascript" th:src="@{js/main.js}"></script>
-        <script type="text/javascript" th:src="@{components/ui/jquery.ui.min.js}"></script>
-        <script type="text/javascript" th:src="@{components/ui/jquery.autotab.js}"></script>
-        <script type="text/javascript" th:src="@{components/ui/timepicker.js}"></script>
-        <script type="text/javascript" th:src="@{components/colorpicker/js/colorpicker.js}"></script>
-        <script type="text/javascript" th:src="@{components/checkboxes/iphone.check.js}"></script>
-        <script type="text/javascript" th:src="@{components/elfinder/js/elfinder.full.js}"></script>
-        <script type="text/javascript" th:src="@{components/datatables/dataTables.min.js}"></script>
-        <script type="text/javascript" th:src="@{components/datatables/ColVis.js}"></script>
-        <script type="text/javascript" th:src="@{components/scrolltop/scrolltopcontrol.js}"></script>
-        <script type="text/javascript" th:src="@{components/fancybox/jquery.fancybox.js}"></script>
-        <script type="text/javascript" th:src="@{components/jscrollpane/mousewheel.js}"></script>
-        <script type="text/javascript" th:src="@{components/jscrollpane/mwheelIntent.js}"></script>
-        <script type="text/javascript" th:src="@{components/jscrollpane/jscrollpane.min.js}"></script>
-        <script type="text/javascript" th:src="@{components/spinner/ui.spinner.js}"></script>
-        <script type="text/javascript" th:src="@{components/tipsy/jquery.tipsy.js}"></script>
-        <script type="text/javascript" th:src="@{components/editor/jquery.cleditor.js}"></script>
-        <script type="text/javascript" th:src="@{components/chosen/chosen.js}"></script>
-        <script type="text/javascript" th:src="@{components/confirm/jquery.confirm.js}"></script>
-        <script type="text/javascript" th:src="@{components/validationEngine/jquery.validationEngine.js}"></script>
-        <script type="text/javascript" th:src="@{components/validationEngine/jquery.validationEngine-en.js}"></script>
-        <script type="text/javascript" th:src="@{components/vticker/jquery.vticker-min.js}"></script>
-        <script type="text/javascript" th:src="@{components/sourcerer/sourcerer.js}"></script>
-        <script type="text/javascript" th:src="@{components/fullcalendar/fullcalendar.js}"></script>
-        <script type="text/javascript" th:src="@{components/flot/flot.js}"></script>
-        <script type="text/javascript" th:src="@{components/flot/flot.pie.min.js}"></script>
-        <script type="text/javascript" th:src="@{components/flot/flot.resize.min.js}"></script>
-        <script type="text/javascript" th:src="@{components/flot/graphtable.js}"></script>
-        <script type="text/javascript" th:src="@{components/uploadify/swfobject.js}"></script>
-        <script type="text/javascript" th:src="@{components/uploadify/uploadify.js}"></script>
-        <script type="text/javascript" th:src="@{components/checkboxes/customInput.jquery.js}"></script>
-        <script type="text/javascript" th:src="@{components/effect/jquery-jrumble.js}"></script>
-        <script type="text/javascript" th:src="@{components/filestyle/jquery.filestyle.js}"></script>
-        <script type="text/javascript" th:src="@{components/placeholder/jquery.placeholder.js}"></script>
-        <script type="text/javascript" th:src="@{components/Jcrop/jquery.Jcrop.js}"></script>
-        <script type="text/javascript" th:src="@{components/imgTransform/jquery.transform.js}"></script>
-        <script type="text/javascript" th:src="@{components/webcam/webcam.js}"></script>
-        <script type="text/javascript" th:src="@{components/rating_star/rating_star.js}"></script>
-        <script type="text/javascript" th:src="@{components/dualListBox/dualListBox.js}"></script>
-        <script type="text/javascript" th:src="@{components/smartWizard/jquery.smartWizard.min.js}"></script>
-        <script type="text/javascript" th:src="@{components/maskedinput/jquery.maskedinput.js}"></script>
-        <script type="text/javascript" th:src="@{components/highlightText/highlightText.js}"></script>
-        <script type="text/javascript" th:src="@{components/elastic/jquery.elastic.source.js}"></script>
+        <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/jquery.cookie.js}"></script>
+        <script type="text/javascript" th:src="@{/js/zice.custom.js}"></script>
+        <script type="text/javascript" th:src="@{/js/main.js}"></script>
+        <script type="text/javascript" th:src="@{/components/ui/jquery.ui.min.js}"></script>
+        <script type="text/javascript" th:src="@{/components/ui/jquery.autotab.js}"></script>
+        <script type="text/javascript" th:src="@{/components/ui/timepicker.js}"></script>
+        <script type="text/javascript" th:src="@{/components/colorpicker/js/colorpicker.js}"></script>
+        <script type="text/javascript" th:src="@{/components/checkboxes/iphone.check.js}"></script>
+        <script type="text/javascript" th:src="@{/components/elfinder/js/elfinder.full.js}"></script>
+        <script type="text/javascript" th:src="@{/components/datatables/dataTables.min.js}"></script>
+        <script type="text/javascript" th:src="@{/components/datatables/ColVis.js}"></script>
+        <script type="text/javascript" th:src="@{/components/scrolltop/scrolltopcontrol.js}"></script>
+        <script type="text/javascript" th:src="@{/components/fancybox/jquery.fancybox.js}"></script>
+        <script type="text/javascript" th:src="@{/components/jscrollpane/mousewheel.js}"></script>
+        <script type="text/javascript" th:src="@{/components/jscrollpane/mwheelIntent.js}"></script>
+        <script type="text/javascript" th:src="@{/components/jscrollpane/jscrollpane.min.js}"></script>
+        <script type="text/javascript" th:src="@{/components/spinner/ui.spinner.js}"></script>
+        <script type="text/javascript" th:src="@{/components/tipsy/jquery.tipsy.js}"></script>
+        <script type="text/javascript" th:src="@{/components/editor/jquery.cleditor.js}"></script>
+        <script type="text/javascript" th:src="@{/components/chosen/chosen.js}"></script>
+        <script type="text/javascript" th:src="@{/components/confirm/jquery.confirm.js}"></script>
+        <script type="text/javascript" th:src="@{/components/validationEngine/jquery.validationEngine.js}"></script>
+        <script type="text/javascript" th:src="@{/components/validationEngine/jquery.validationEngine-en.js}"></script>
+        <script type="text/javascript" th:src="@{/components/vticker/jquery.vticker-min.js}"></script>
+        <script type="text/javascript" th:src="@{/components/sourcerer/sourcerer.js}"></script>
+        <script type="text/javascript" th:src="@{/components/fullcalendar/fullcalendar.js}"></script>
+        <script type="text/javascript" th:src="@{/components/flot/flot.js}"></script>
+        <script type="text/javascript" th:src="@{/components/flot/flot.pie.min.js}"></script>
+        <script type="text/javascript" th:src="@{/components/flot/flot.resize.min.js}"></script>
+        <script type="text/javascript" th:src="@{/components/flot/graphtable.js}"></script>
+        <script type="text/javascript" th:src="@{/components/uploadify/swfobject.js}"></script>
+        <script type="text/javascript" th:src="@{/components/uploadify/uploadify.js}"></script>
+        <script type="text/javascript" th:src="@{/components/checkboxes/customInput.jquery.js}"></script>
+        <script type="text/javascript" th:src="@{/components/effect/jquery-jrumble.js}"></script>
+        <script type="text/javascript" th:src="@{/components/filestyle/jquery.filestyle.js}"></script>
+        <script type="text/javascript" th:src="@{/components/placeholder/jquery.placeholder.js}"></script>
+        <script type="text/javascript" th:src="@{/components/Jcrop/jquery.Jcrop.js}"></script>
+        <script type="text/javascript" th:src="@{/components/imgTransform/jquery.transform.js}"></script>
+        <script type="text/javascript" th:src="@{/components/webcam/webcam.js}"></script>
+        <script type="text/javascript" th:src="@{/components/rating_star/rating_star.js}"></script>
+        <script type="text/javascript" th:src="@{/components/dualListBox/dualListBox.js}"></script>
+        <script type="text/javascript" th:src="@{/components/smartWizard/jquery.smartWizard.min.js}"></script>
+        <script type="text/javascript" th:src="@{/components/maskedinput/jquery.maskedinput.js}"></script>
+        <script type="text/javascript" th:src="@{/components/highlightText/highlightText.js}"></script>
+        <script type="text/javascript" th:src="@{/components/elastic/jquery.elastic.source.js}"></script>
     </div>
     <div th:fragment="header-js-blank">
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="components/effect/jquery-jrumble.js"></script>
-        <script type="text/javascript" src="components/ui/jquery.ui.min.js"></script>
-        <script type="text/javascript" src="components/tipsy/jquery.tipsy.js"></script>
-        <script type="text/javascript" src="components/checkboxes/iphone.check.js"></script>
-        <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/components/effect/jquery-jrumble.js}"></script>
+        <script type="text/javascript" th:src="@{/components/ui/jquery.ui.min.js}"></script>
+        <script type="text/javascript" th:src="@{/components/tipsy/jquery.tipsy.js}"></script>
+        <script type="text/javascript" th:src="@{/components/checkboxes/iphone.check.js}"></script>
+        <script type="text/javascript" th:src="@{/js/login.js}"></script>
     </div>
     <div th:fragment="header-css">
         <!-- this is header-css -->
-        <link rel="stylesheet" type="text/css" th:href="@{css/zice.style.css}"/>
-        <link th:href="@{css/icon.css}" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" type="text/css" th:href="@{components/tipsy/tipsy.css}" media="all"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/zice.style.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/icon.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{/css/ui-custom.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{/css/0ui-custom.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{/css/buttons.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{/components/tipsy/tipsy.css}" media="all"/>
     </div>
 </head>
 <body>
-<div th:fragment="menu">
-    <!-- this is header -->
-    <div id="header">
-        <div id="account_info">
-            <div class="setting"><b>Welcome </b> <b class="red"><span sec:authentication="name"></span></b><img src="images/gear.png" class="gear"  alt="Profile Setting" />
-                <ul class="subnav ">
-                    <li><a href="#">Setting</a></li>
-                    <br class="clear"/>
-                </ul>
-            </div>
-            <div class="logout" title="Disconnect">
-                <b >Logout</b> <img src="images/connect.png" name="connect" class="disconnect" alt="disconnect" />
+    <div th:fragment="header">
+        <!-- this is header -->
+        <div id="header">
+            <div id="account_info">
+                <div class="setting"><b>Welcome </b> <b class="red"><span sec:authentication="name"></span></b><img th:src="@{/images/gear.png}" class="gear"  alt="Profile Setting" />
+                    <ul class="subnav ">
+                        <li><a href="#">Setting</a></li>
+                        <br class="clear"/>
+                    </ul>
+                </div>
+                <div class="logout" title="Disconnect">
+                    <b >Logout</b> <img th:src="@{/images/connect.png}" name="connect" class="disconnect" alt="disconnect" />
+                </div>
             </div>
         </div>
     </div>
-    <div id="shadowhead"></div>
-    <div id="left_menu">
-        <ul id="main_menu" class="main_menu">
-            <li class="limenu select">
-                <a href="#"><span class="ico gray shadow home" ></span><b>HOME</b></a>
-            </li>
-            <li class="limenu" >
-                <a href="#" ><span class="ico gray shadow window"></span><b>Quản Lý Sản Phẩm </b></a>
-                <ul>
-                    <li ><a href="form.html"> basic form </a></li>
-                    <li ><a href="vform.html"> validation </a></li>
-                    <li ><a href="wizard.html"> wizard </a></li>
-                </ul>
-            </li>Phí
-            <li class="limenu">
-                <a href="#"><span class="ico gray shadow window" ></span><b>Dự Trù Chi Phí</b></a>
-            </li>
-        </ul>
-    </div>
-</div>
-
 </body>
 </html>

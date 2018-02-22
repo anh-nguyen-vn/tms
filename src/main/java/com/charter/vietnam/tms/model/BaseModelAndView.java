@@ -16,6 +16,10 @@ public class BaseModelAndView extends ModelAndView {
         super();
     }
 
+    public BaseModelAndView(String viewName) {
+        super(viewName);
+    }
+
     public String getSuccessMessage() {
         return successMessage;
     }
